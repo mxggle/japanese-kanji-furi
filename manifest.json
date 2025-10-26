@@ -1,0 +1,60 @@
+{
+  "manifest_version": 3,
+  "name": "Furigana Companion",
+  "short_name": "Furigana",
+  "description": "Inject fast, themeable furigana (hiragana, katakana, or romaji) for every kanji on the page.",
+  "version": "0.1.0",
+  "permissions": [
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "vendor/kuroshiro.min.js",
+        "vendor/kuroshiro-analyzer-kuromoji.min.js",
+        "src/shared/settings.js",
+        "src/content/content.js"
+      ],
+      "css": [
+        "styles/content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "options_page": "src/ui/options.html",
+  "action": {
+    "default_icon": {
+      "16": "assets/icons/icon-16.png",
+      "32": "assets/icons/icon-32.png"
+    },
+    "default_title": "Furigana Companion",
+    "default_popup": "src/ui/popup.html"
+  },
+  "icons": {
+    "16": "assets/icons/icon-16.png",
+    "32": "assets/icons/icon-32.png",
+    "48": "assets/icons/icon-48.png",
+    "128": "assets/icons/icon-128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "vendor/kuromoji-dict/*",
+        "vendor/kanji-data.json"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

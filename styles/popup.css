@@ -1,0 +1,148 @@
+:root {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #0f172a;
+  background-color: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  background: #f9fafb;
+}
+
+.popup {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.popup__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.popup__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin: 0 0 4px;
+}
+
+.popup__title {
+  margin: 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control__label {
+  font-size: 13px;
+  color: #475569;
+}
+
+.control__select {
+  padding: 6px 8px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 13px;
+  background-color: #fff;
+  color: #0f172a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.switch {
+  position: relative;
+  padding: 10px;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.switch input {
+  display: none;
+}
+
+.switch__slider {
+  width: 36px;
+  height: 20px;
+  border-radius: 999px;
+  background: #cbd5f5;
+  position: relative;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.switch__slider::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 4px;
+  width: 14px;
+  height: 14px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.25);
+}
+
+.switch input:checked + .switch__slider {
+  background: linear-gradient(120deg, #f472b6, #ec4899);
+}
+
+.switch input:checked + .switch__slider::after {
+  transform: translateX(14px);
+}
+
+.switch__label {
+  font-size: 12px;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+.ghost-btn,
+.primary-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.ghost-btn {
+  background: rgba(244, 114, 182, 0.12);
+  color: #be185d;
+}
+
+.primary-btn {
+  background: linear-gradient(120deg, #6366f1, #8b5cf6);
+  color: #fff;
+}
+
+.popup__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.status {
+  font-size: 11px;
+  color: #64748b;
+}

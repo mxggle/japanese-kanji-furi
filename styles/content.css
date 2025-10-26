@@ -1,0 +1,129 @@
+:root {
+  --furigana-grade-1: #f472b6;
+  --furigana-grade-2: #ec4899;
+  --furigana-grade-3: #db2777;
+  --furigana-grade-4: #be185d;
+  --furigana-grade-5: #9d174d;
+  --furigana-grade-6: #831843;
+  --furigana-grade-7: #701a75;
+  --furigana-grade-8: #6b0f4a;
+  --furigana-grade-9: #581c87;
+  --furigana-grade-10: #4c1d95;
+
+  --furigana-jlpt-n5: #14b8a6;
+  --furigana-jlpt-n4: #0ea5e9;
+  --furigana-jlpt-n3: #6366f1;
+  --furigana-jlpt-n2: #a855f7;
+  --furigana-jlpt-n1: #f43f5e;
+}
+
+.furigana-wrapper {
+  all: unset;
+  display: contents !important;
+  white-space: inherit !important;
+}
+
+ruby[data-furigana="injected"] {
+  ruby-position: over;
+  font-variant-east-asian: ruby;
+}
+
+ruby[data-furigana="injected"] > rt {
+  font-size: 0.62em;
+  letter-spacing: 0.08em;
+  color: #6b7280;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  opacity: 0.95;
+}
+
+ruby[data-furigana-tone="dark"] > rt {
+  color: #f8fafc;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.65);
+}
+
+ruby[data-furigana="injected"] > rb {
+  padding: 0 0.05em;
+}
+
+ruby[data-furigana="injected"] > rp {
+  display: none;
+}
+
+html[data-furigana-hover="true"] ruby[data-furigana="injected"] > rt {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+html[data-furigana-hover="true"] ruby[data-furigana="injected"]:hover > rt {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+html[data-furigana-unselectable="true"] ruby[data-furigana="injected"] > rt {
+  user-select: none;
+  pointer-events: none;
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code^="grade-"] {
+  color: var(--furigana-default-accent, currentColor);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-1"] {
+  color: var(--furigana-grade-1);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-2"] {
+  color: var(--furigana-grade-2);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-3"] {
+  color: var(--furigana-grade-3);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-4"] {
+  color: var(--furigana-grade-4);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-5"] {
+  color: var(--furigana-grade-5);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-6"] {
+  color: var(--furigana-grade-6);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-7"] {
+  color: var(--furigana-grade-7);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-8"] {
+  color: var(--furigana-grade-8);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-9"] {
+  color: var(--furigana-grade-9);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="grade-10"] {
+  color: var(--furigana-grade-10);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="jlpt-n5"] {
+  color: var(--furigana-jlpt-n5);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="jlpt-n4"] {
+  color: var(--furigana-jlpt-n4);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="jlpt-n3"] {
+  color: var(--furigana-jlpt-n3);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="jlpt-n2"] {
+  color: var(--furigana-jlpt-n2);
+}
+
+html[data-furigana-color="on"] ruby[data-furigana-level-code="jlpt-n1"] {
+  color: var(--furigana-jlpt-n1);
+}

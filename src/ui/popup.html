@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Furigana Companion</title>
+    <link rel="stylesheet" href="../../styles/popup.css" />
+  </head>
+  <body>
+    <main class="popup">
+      <header class="popup__header">
+        <div>
+          <p class="popup__eyebrow">Furigana Companion</p>
+          <h1 class="popup__title">Reading helper</h1>
+        </div>
+        <button id="refreshBtn" class="ghost-btn" type="button">Refresh</button>
+      </header>
+
+      <section class="control">
+        <label class="control__label" for="furiganaStyle">Furigana script</label>
+        <select id="furiganaStyle" class="control__select">
+          <option value="hiragana">Hiragana</option>
+          <option value="katakana">Katakana</option>
+          <option value="romaji">Romaji</option>
+        </select>
+      </section>
+
+      <section class="grid">
+        <label class="switch">
+          <input type="checkbox" id="hoverOnly" />
+          <span class="switch__slider"></span>
+          <span class="switch__label">Show only on hover</span>
+        </label>
+
+        <label class="switch">
+          <input type="checkbox" id="unselectable" />
+          <span class="switch__slider"></span>
+          <span class="switch__label">Keep furigana unselectable</span>
+        </label>
+
+        <label class="switch">
+          <input type="checkbox" id="useColorTags" />
+          <span class="switch__slider"></span>
+          <span class="switch__label">Color-tag kanji</span>
+        </label>
+      </section>
+
+      <section class="control">
+        <label class="control__label" for="colorMode">Color system</label>
+        <select id="colorMode" class="control__select">
+          <option value="grade">School grade</option>
+          <option value="jlpt">JLPT level</option>
+        </select>
+      </section>
+
+      <section class="control">
+        <label class="control__label" for="colorTheme">Color theme</label>
+        <select id="colorTheme" class="control__select"></select>
+      </section>
+
+      <footer class="popup__footer">
+        <button id="optionsBtn" class="primary-btn" type="button">Open options</button>
+        <span id="status" class="status">Ready</span>
+      </footer>
+    </main>
+
+    <script src="../shared/settings.js"></script>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

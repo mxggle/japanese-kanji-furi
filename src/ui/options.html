@@ -1,0 +1,102 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Furigana Companion - Options</title>
+    <link rel="stylesheet" href="../../styles/options.css" />
+  </head>
+  <body>
+    <main class="options">
+      <header class="options__header">
+        <div>
+          <p class="eyebrow">Furigana Companion</p>
+          <h1>Extension settings</h1>
+          <p class="subtitle">
+            Tune how furigana are rendered, select color themes, and reset defaults.
+          </p>
+        </div>
+        <span id="status" class="status">Unsaved</span>
+      </header>
+
+      <section class="card">
+        <h2>Conversion</h2>
+        <div class="field">
+          <label for="optStyle">Furigana script</label>
+          <select id="optStyle">
+            <option value="hiragana">Hiragana</option>
+            <option value="katakana">Katakana</option>
+            <option value="romaji">Romaji</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="optRomajiSystem">Romaji system</label>
+          <select id="optRomajiSystem">
+            <option value="hepburn">Hepburn</option>
+            <option value="kunrei">Kunrei-shiki</option>
+            <option value="passport">Passport</option>
+          </select>
+          <small>Only used when Romaji is selected.</small>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Display</h2>
+        <label class="switch">
+          <input type="checkbox" id="optHoverOnly" />
+          <span class="switch__slider"></span>
+          <div>
+            <p>Show furigana only on hover</p>
+            <small>Great for decluttering dense articles.</small>
+          </div>
+        </label>
+        <label class="switch">
+          <input type="checkbox" id="optUnselectable" />
+          <span class="switch__slider"></span>
+          <div>
+            <p>Make furigana unselectable</p>
+            <small>Prevents accidental copy/paste noise.</small>
+          </div>
+        </label>
+      </section>
+
+      <section class="card">
+        <h2>Color tags</h2>
+        <label class="switch">
+          <input type="checkbox" id="optUseColor" />
+          <span class="switch__slider"></span>
+          <div>
+            <p>Enable kanji color tags</p>
+            <small>Color by school grade or JLPT band.</small>
+          </div>
+        </label>
+        <div class="grid">
+          <div class="field">
+            <label for="optColorMode">Color system</label>
+            <select id="optColorMode">
+              <option value="grade">School grade</option>
+              <option value="jlpt">JLPT level</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="optColorTheme">Color theme</label>
+            <select id="optColorTheme"></select>
+          </div>
+        </div>
+        <div id="themePreview" class="theme-preview" aria-live="polite"></div>
+      </section>
+
+      <section class="card actions">
+        <button id="resetBtn" type="button" class="ghost">
+          Reset to defaults
+        </button>
+        <button id="applyBtn" type="button" class="primary">
+          Apply to current tab
+        </button>
+      </section>
+    </main>
+
+    <script src="../shared/settings.js"></script>
+    <script type="module" src="options.js"></script>
+  </body>
+</html>
+
